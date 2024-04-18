@@ -37,7 +37,7 @@ public class AdminUserConfig implements CommandLineRunner {
 
         var userAdmin = userRepository.findByUsername("admin");
 
-        userAdmin.isPresent(
+        userAdmin.ifPresentOrElse(
                 user -> {
                     System.out.println("admin já existe");
                 },
