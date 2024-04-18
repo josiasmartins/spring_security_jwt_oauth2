@@ -13,7 +13,7 @@ public class Tweet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "tweet_id")
+//    @Column(name = "tweet_id")
     private Long tweetId;
 
     @ManyToOne

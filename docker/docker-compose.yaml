@@ -2,7 +2,7 @@ services:
   mysql:
     image: mysql
     ports:
-      - "3306:3306" # "entrada_de_fora:entrada_de_dentro"
+      - "3307:3306" # "entrada_de_fora:entrada_de_dentro"
     expose:
       - "3306"
     environment:
