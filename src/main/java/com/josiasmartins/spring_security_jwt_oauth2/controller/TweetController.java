@@ -50,14 +50,20 @@ public class TweetController {
             @RequestParam(value = "pageSize", defaultValue = "10") int pageSize
     ) {
         var tweets = this.tweetRepository.findAll(
-                PageRequest.of(page, pageSize, Sort.Direction.DESC, "creationTimestamp"))
+                PageRequest.of(page, pageSize, Sort.Direction.DESC, "createTimestamp"))
                 .map(tweet -> new FeedItemDTO(
                         tweet.getTweetId(),
                         tweet.getContent(),
                         tweet.getUser().getUsername()
                 ));
 
-        return ResponseEntity.ok(new FeedDTO(tweets.getContent(), page, tweets.getTotalPages(), tweets.getTotalElements()));
+        return ResponseEntity.ok(new FeedDTO(
+                tweets.getContent(),
+                page,
+                pageSize,
+                tweets.getTotalPages(),
+                tweets.getTotalElements())
+        );
 
     }
 
