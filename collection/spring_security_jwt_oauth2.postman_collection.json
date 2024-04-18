@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "5582c991-1157-43a4-a9d8-1fee3dd3e09f",
+		"name": "spring_security_jwt_oauth2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "11087463",
+		"_collection_link": "https://martian-escape-358671.postman.co/workspace/estudo~506a2aef-ad07-4f1d-9ec2-d56bcc0fd652/collection/11087463-5582c991-1157-43a4-a9d8-1fee3dd3e09f?action=share&source=collection_link&creator=11087463"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/login"
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"josias\",\r\n    \"password\": \"josias99\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/users"
+			},
+			"response": []
+		},
+		{
+			"name": "List users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzcHJpbmdfc2VjdXJpdHlfand0X29hdXRoMiIsInN1YiI6ImRlYjQzNzY2LTMwYmYtNDg4YS04ZmIwLTFjNWMwMzQxMGYyNCIsImV4cCI6MTcxMzQ2NzM5MywiaWF0IjoxNzEzNDY3MDkzLCJzY29wZSI6ImFkbWluIn0.bTNOGMxq9wKDY2XrmcHc0vZoKMPuZ9Yl_rB3EN3IFIC4OEKlcg8m0kYaxM3MOzelLqO6WOR16mxvJOHh34Pb5Lwn1Q_mTR_Bn2pCuW-148_geggcHGd2muQqrM1bC-58QTFW1bJSPJA9mNDIrx3OfegUUHI0Y76BA_zpI0J0WuU10TuthTf3RB0qiI8n99d0djRQWLRduqt7tDKj5Rev_TxGwe_1Y15nS-3eRdS27HHAcYHhkmezOwpnG7SCe9Xnf_wpGs2rtUvpI50kDU7rRM9-IrVbbezBHSJWIjj4sJf2RtM5ZbRegS_OKetx9LFq1Dlz1EDY_nOXdgKW4UU3fQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Tweet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzcHJpbmdfc2VjdXJpdHlfand0X29hdXRoMiIsInN1YiI6ImRlYjQzNzY2LTMwYmYtNDg4YS04ZmIwLTFjNWMwMzQxMGYyNCIsImV4cCI6MTcxMzQ2NzM5MywiaWF0IjoxNzEzNDY3MDkzLCJzY29wZSI6ImFkbWluIn0.bTNOGMxq9wKDY2XrmcHc0vZoKMPuZ9Yl_rB3EN3IFIC4OEKlcg8m0kYaxM3MOzelLqO6WOR16mxvJOHh34Pb5Lwn1Q_mTR_Bn2pCuW-148_geggcHGd2muQqrM1bC-58QTFW1bJSPJA9mNDIrx3OfegUUHI0Y76BA_zpI0J0WuU10TuthTf3RB0qiI8n99d0djRQWLRduqt7tDKj5Rev_TxGwe_1Y15nS-3eRdS27HHAcYHhkmezOwpnG7SCe9Xnf_wpGs2rtUvpI50kDU7rRM9-IrVbbezBHSJWIjj4sJf2RtM5ZbRegS_OKetx9LFq1Dlz1EDY_nOXdgKW4UU3fQ"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"ola mundo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/tweets"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Tweet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzcHJpbmdfc2VjdXJpdHlfand0X29hdXRoMiIsInN1YiI6IjQ4YzdmYTAxLTMzZDgtNDUzOC05ODliLTIzMGE5YjM5MTNmOSIsImV4cCI6MTcxMzQ2ODY2NywiaWF0IjoxNzEzNDY4MzY3LCJzY29wZSI6ImJhc2ljIn0.L3Q60a7d2TxqLhLvYLKb7cFXCt_HW1GFPdbr62CIN_35-TX3mesLs1Pvj-DzPRHo6kQL8D3-iX_SMZwJYxNNS4lpGNiWy_Td5pM_VMA7FA62Y1CMj6XwUfUzgfgV8lLt6yPFWNcWyEOZpA6-o_ISkf2Wk5TeYrlCGu_SvxNPW0vHKUyrIs42QHCdAtIfMkbg7Yu3h-or34lRLGf-r9l2kyNSXutyYQu-wmy5xcWHKZRZuZFPcGW4QQqiZkRAoBszdfM3ZfGe6YN_jutlfR1abC0gik_AH-j9LRBgw7CyOIHeYNteErt09XbHIx1pwBfskWVlo3oMeP65w5G8PexAYQ"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"ola mundo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/0"
+			},
+			"response": []
+		},
+		{
+			"name": "Feed",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzcHJpbmdfc2VjdXJpdHlfand0X29hdXRoMiIsInN1YiI6IjQ4YzdmYTAxLTMzZDgtNDUzOC05ODliLTIzMGE5YjM5MTNmOSIsImV4cCI6MTcxMzQ2ODY2NywiaWF0IjoxNzEzNDY4MzY3LCJzY29wZSI6ImJhc2ljIn0.L3Q60a7d2TxqLhLvYLKb7cFXCt_HW1GFPdbr62CIN_35-TX3mesLs1Pvj-DzPRHo6kQL8D3-iX_SMZwJYxNNS4lpGNiWy_Td5pM_VMA7FA62Y1CMj6XwUfUzgfgV8lLt6yPFWNcWyEOZpA6-o_ISkf2Wk5TeYrlCGu_SvxNPW0vHKUyrIs42QHCdAtIfMkbg7Yu3h-or34lRLGf-r9l2kyNSXutyYQu-wmy5xcWHKZRZuZFPcGW4QQqiZkRAoBszdfM3ZfGe6YN_jutlfR1abC0gik_AH-j9LRBgw7CyOIHeYNteErt09XbHIx1pwBfskWVlo3oMeP65w5G8PexAYQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"ola mundo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/feed"
+			},
+			"response": []
+		}
+	]
+}
