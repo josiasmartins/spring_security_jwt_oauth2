@@ -13,6 +13,12 @@ openssl genrsa > app.key
 openssl openssl rsa -in app.key -pubout -out app.pub
 ```
 
+#### criando variaveis pelo aplication.properties e atribuido os valores das chaves
+```properties
+jwt.public.key=classpath:app.pub
+jwt.private.key=classpath:app.key
+```
+
 Site para gerar as chaves
 https://cryptotools.net/rsagen  
 
