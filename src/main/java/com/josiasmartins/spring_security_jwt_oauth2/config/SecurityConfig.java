@@ -38,6 +38,8 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.POST, "/login").permitAll()
+                        .requestMatchers("*", "/swagger-ui/*").permitAll()
+                        .requestMatchers("*", "/v3/api-docs/*", "v3/api-docs").permitAll()
                         .requestMatchers(HttpMethod.POST, "/users").permitAll()
                         .anyRequest().authenticated()) // toda a requisição precisa ser autenticada
                 .csrf(csfr -> csfr.disable())
